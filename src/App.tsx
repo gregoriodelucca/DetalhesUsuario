@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import UserDetails from "./components/UserDetails";
+import { User } from "./interfaces/User";
 
-function App() {
+const App: React.FC = () => {
+  const user: User = {
+    id: 1,
+    name: "gregorio de lucca ",
+    email: "gregoriodelucca@gmail.com",
+    phone: "123-456-7890",
+    address: {
+      street: "123 Main St",
+      city: "Anytown",
+      zipcode: "12345",
+    },
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ fontFamily: "Arial, sans-serif", padding: "2rem" }}>
+      <h1>User Details</h1>
+      <UserDetails user={user} />
     </div>
   );
-}
+};
 
 export default App;
